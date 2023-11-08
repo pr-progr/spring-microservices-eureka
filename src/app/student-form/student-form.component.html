@@ -1,0 +1,28 @@
+<div class="card my-5">
+    <div class="card-body">
+      <form (ngSubmit)="onSubmit()" #studentForm="ngForm">
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input type="text" [(ngModel)]="student.nome" 
+            class="form-control" 
+            id="nome" 
+            name="nome" 
+            placeholder="Inserisci il tuo nome"
+            required #name="ngModel">
+        </div>
+        <div [hidden]="!name.pristine" class="alert alert-danger">Il nome èrichiiesto</div>
+        <div class="form-group">
+            <label for="name">Cognome</label>
+            <input type="text" [(ngModel)]="student.cognome" 
+              class="form-control" 
+              id="cognome" 
+              name="cognome" 
+              placeholder="Inserisci il tuo cognome"
+              required #name="ngModel">
+          </div>
+          <div [hidden]="!name.pristine" class="alert alert-danger">Il Cgnome è richiesto</div>
+        
+        <button type="submit" [disabled]="!studentForm.form.valid" 
+          class="btn btn-info">Submit</button>
+      </form>
+</div>
