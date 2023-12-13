@@ -2,21 +2,23 @@ package realt.corso.microservizi.api.client.model;
 
 public class LoginUserModel {
 	
-	private String eemail;
-	private String passwoord;
+	private String email;
+	private String password;
 	
-	public String getEemail() {
-		return eemail;
+	public String getEmail() {
+		return email;
 	}
-	public void setEemail(String eemail) {
-		this.eemail = eemail;
+	public void setEmail(String email) {
+		this.email = email;
 	}
-	public String getPasswoord() {
-		return passwoord;
+	public String getPassword() {
+		return password;
 	}
-	public void setPasswoord(String passwoord) {
-		this.passwoord = passwoord;
+	public void setPassword(String password) {
+		this.password = password;
 	}
+	
+	
 	
 	
 

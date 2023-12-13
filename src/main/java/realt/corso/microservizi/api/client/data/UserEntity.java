@@ -31,12 +31,12 @@ public class UserEntity implements Serializable {
 		private String lastName;
 		
 		@Column(nullable = false , length = 120, unique = true)
-		private String eMail;
+		private String email;
 		
 		@Column(nullable = false , unique = true)
 		private String userId;
 		
-		@Column(nullable = false , unique = true)
+		@Column(nullable = false )
 		private String encryptedPassword;
 		
 		
@@ -64,14 +64,6 @@ public class UserEntity implements Serializable {
 			this.lastName = lastName;
 		}
 		
-		public String geteMail() {
-			return eMail;
-		}
-		
-		public void seteMail(String eMail) {
-			this.eMail = eMail;
-		}
-		
 		public String getUserId() {
 			return userId;
 		}
@@ -86,6 +78,14 @@ public class UserEntity implements Serializable {
 		
 		public void setEncryptedPassword(String encryptedPassword) {
 			this.encryptedPassword = encryptedPassword;
+		}
+
+		public String getEmail() {
+			return email;
+		}
+
+		public void setEmail(String email) {
+			this.email = email;
 		}
 
 }

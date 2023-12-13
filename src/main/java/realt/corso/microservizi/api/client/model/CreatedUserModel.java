@@ -4,7 +4,7 @@ public class CreatedUserModel {
 	
 	private String firstName;
 	private String lastName;
-	private String eMail;
+	private String email;
 	private String userId;
 	public String getFirstName() {
 		return firstName;
@@ -18,17 +18,18 @@ public class CreatedUserModel {
 	public void setLastName(String lastName) {
 		this.lastName = lastName;
 	}
-	public String geteMail() {
-		return eMail;
-	}
-	public void seteMail(String eMail) {
-		this.eMail = eMail;
-	}
+	
 	public String getUserId() {
 		return userId;
 	}
 	public void setUserId(String userId) {
 		this.userId = userId;
+	}
+	public String getEmail() {
+		return email;
+	}
+	public void setEmail(String email) {
+		this.email = email;
 	}
 
 	

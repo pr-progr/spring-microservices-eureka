@@ -4,7 +4,8 @@ import org.springframework.data.repository.CrudRepository;
 
 import realt.corso.microservizi.api.client.data.UserEntity;
 
-public interface UserRepository extends CrudRepository<UserEntity, Long> {
 
-	
+
+public interface UserRepository extends CrudRepository<UserEntity, Long> {
+	UserEntity findByEmail(String email);
 }

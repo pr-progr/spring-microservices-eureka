@@ -38,8 +38,8 @@ public class UsersController {
 		
 		ModelMapper modelMapper = new ModelMapper();
 		modelMapper.getConfiguration().setMatchingStrategy(MatchingStrategies.STRICT);
-		UserDto useeDto = modelMapper.map(model, UserDto.class);
-		UserDto userCreateDto = userService.createUserDTO(useeDto);
+		UserDto userDto = modelMapper.map(model, UserDto.class);
+		UserDto userCreateDto = userService.createUserDTO(userDto);
 		CreatedUserModel returnValue = modelMapper.map(userCreateDto, CreatedUserModel.class);
 		return ResponseEntity.status(HttpStatus.CREATED).body(returnValue);
 	}

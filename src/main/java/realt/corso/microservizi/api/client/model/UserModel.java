@@ -17,7 +17,7 @@ public class UserModel {
 	private String password;
 	@NotNull(message ="Email cannot be ull")
 	@Email
-	private String eMail;
+	private String email;
 	
 	public String getFirstName() {
 		return firstName;
@@ -37,11 +37,13 @@ public class UserModel {
 	public void setPassword(String password) {
 		this.password = password;
 	}
-	public String geteMail() {
-		return eMail;
+	public String getEmail() {
+		return email;
 	}
-	public void seteMail(String eMail) {
-		this.eMail = eMail;
+	public void setEmail(String email) {
+		this.email = email;
 	}
+
+	
 
 }
