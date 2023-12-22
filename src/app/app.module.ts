@@ -7,19 +7,22 @@ import { StudentService } from 'service/student.service';
 import { StudentListComponent } from './student-list/student-list/student-list.component';
 import { StudentFormComponent } from './student-form/student-form.component';
 import { FormsModule } from '@angular/forms';
+import { LoginService } from 'service/login.service';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     StudentListComponent,
-    StudentFormComponent
+    StudentFormComponent,
+    LoginComponent
   ],
   imports: [
     AppRoutingModule,
     BrowserModule,
     HttpClientModule,FormsModule
   ],
-  providers: [StudentService],
+  providers: [StudentService,LoginService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
