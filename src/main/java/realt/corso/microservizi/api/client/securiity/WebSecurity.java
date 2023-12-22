@@ -12,7 +12,6 @@ import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
-import org.springframework.util.AntPathMatcher;
 
 import realt.corso.microservizi.api.client.service.UserService;
 
@@ -44,20 +43,22 @@ public class WebSecurity {
     	authenticationFilter.setFilterProcessesUrl(env.getProperty("login.url.path"));
 		
 		http.csrf(csrf -> csrf.disable());
+	
 		http.authorizeHttpRequests(
 				req -> req
-					.requestMatchers(new AntPathRequestMatcher("/users/**", HttpMethod.POST.toString())).permitAll()
+					.requestMatchers(new AntPathRequestMatcher("/users/**")).permitAll()
 					.requestMatchers(new AntPathRequestMatcher("/h2-console/**")).permitAll()
-					.requestMatchers(new AntPathRequestMatcher("/users/status/check", HttpMethod.GET.toString())).permitAll()
+		//			.requestMatchers(new AntPathRequestMatcher("/users/status/check", HttpMethod.GET.toString())).permitAll()
 					)
+			.addFilter(new AuthorizationFilter(authenticationManager, env))
 			.addFilter(authenticationFilter)
 			.authenticationManager(authenticationManager)
 			.sessionManagement(session -> 
 				session.sessionCreationPolicy(SessionCreationPolicy.STATELESS)
 			);
-		http.headers(h -> h.frameOptions(f -> f.sameOrigin()));
+		http.headers(h -> h.frameOptions(f -> f.disable()));
+		
 		
 		return http.build();
 		
-	}
-}
+}}

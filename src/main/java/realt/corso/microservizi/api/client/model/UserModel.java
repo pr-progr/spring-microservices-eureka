@@ -6,10 +6,10 @@ import jakarta.validation.constraints.Size;
 
 public class UserModel {
 	
-	@NotNull(message ="FFirst Name cannot be ull")
+	@NotNull(message ="First Name cannot be ull")
 	@Size(min=2 , message = "First Name must be greater than 2 characters")
 	private String firstName;
-	@NotNull(message ="FFirst Name cannot be ull")
+	@NotNull(message ="First Name cannot be ull")
 	@Size(min=2 , message = "First Name must be greater than 2 characters")
 	private String lastName;
 	@NotNull(message ="Password cannot be ull")

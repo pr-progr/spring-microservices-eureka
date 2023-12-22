@@ -1,0 +1,69 @@
+package realt.corso.microservizi.api.client.data;
+
+import java.io.Serializable;
+import java.util.Collection;
+
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.JoinTable;
+import jakarta.persistence.ManyToMany;
+import jakarta.persistence.Table;
+import lombok.Data;
+
+@Entity
+@Table(name = "authority")
+@Data
+public class AuthorityEntity implements Serializable {
+	
+
+
+	private static final long serialVersionUID = 7599637128133628327L;
+	
+	@Id
+	@GeneratedValue
+	private long id;
+	
+	@Column(nullable = false)
+	private String name;
+	
+	@ManyToMany(mappedBy = "authorities")
+	private Collection<RoleEntity> roles;
+	
+	public AuthorityEntity() {
+		// TODO Auto-generated constructor stub
+	}
+
+	public AuthorityEntity(String name) {
+		this.name=name;
+	}
+
+	public long getId() {
+		return id;
+	}
+
+	public void setId(long id) {
+		this.id = id;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public Collection<RoleEntity> getRoles() {
+		return roles;
+	}
+
+	public void setRoles(Collection<RoleEntity> roles) {
+		this.roles = roles;
+	}
+	
+	
+
+}
